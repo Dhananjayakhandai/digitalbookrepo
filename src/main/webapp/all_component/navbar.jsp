@@ -1,104 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Book</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .header-bar {
-            height: 8px;
-            background-color: #3f51b5;
-        }
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    page isELIgnored="false"%>
+<div class="container_fluid".
+    style="height: 5px;background-color: #303f9f"></div>
 
-        .header-content {
-            padding: 15px 0;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    <div class="container-fluid p-3 bg-light">
+        <div class="row">
+            <div class="col-md-3 text-success">
+                <h3>
+                    <i class="fas fa-book"></i> Ebooks
+                </h3>
+            </div>
+            <div class="col-md-6">
+                <form class="form-inline my-2  my-lg-0">
+                    <input class="form-control mr-sm-2" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
 
-        .header-content h3 {
-            margin: 0;
-            font-weight: bold;
-        }
 
-        .header-content .form-inline input {
-            width: 100%;
-        }
+            <c:if test="${not empty userobj}">
+                <div class="col-md-3">
 
-        .header-content .btn {
-            margin-left: 10px;
-        }
+                    <a href="checkout.jsp"><i class="fas fa-cart-plus fa-2x"></i></a>
 
-        .navbar-custom {
-            background-color: #3f51b5;
-        }
+                    <a href="Login.jsp"
+                        class="btn-success"><i class="fas fa-user-plus"></i>
+                        ${userobj.name}</a>
 
-        .navbar-custom .navbar-nav .nav-link {
-            color: #ffffff;
-            margin-right: 20px;
-        }
+                        <a href="layout" class="btn btn-primary text-white"><i 
+                        class="fas-fa-sign-in-alt"></i> Logout</a> 
+                </div>
 
-        .navbar-custom .navbar-brand {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .navbar-custom .form-inline .btn {
-            color: #3f51b5;
-            background-color: #ffffff;
-            border: none;
-        }
-
-        .navbar-custom .form-inline .btn:hover {
-            background-color: #e0e0e0;
-        }
-
-        .navbar-custom .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-custom .navbar-toggler-icon {
-            color: #ffffff;
-        }
-    </style>
-</head>
-<body>
+            </c:if>
 
 
 
-<div class="container-fluid header-content">
-    <div class="row align-items-center">
-        <div class="col-md-3 text-success">
-          
-        </div>
-        <div class="col-md-6">
-           <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-success my-1 my-sm-3" type="submit">Search</button>
-</form>
+            <c:if test="${empty userobj }">
+                <div class="col-md-3">
+                    <a href="Login.jsp" class="btn btn-success"><i
+                        class="fas fas-fa-sign-in-alt"></i>Login</a> <a href="register.jsp"
+                        class="btn btn-primary text-white"><i class="fas-fa-user-plus"></i>
+                        Register</a>
+                </div>
 
-        </div>
-        <div class="col-md-3 text-right">
-            <a href="login.jsp" class="btn btn-success">Login</a> 
-            <a href="register.jsp" class="btn btn-primary text-white">Register</a>
-        </div>
+            </c:if>
+
+    </div>        
     </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <a class="navbar-brand" href="#"><i class="fa-solid fa-house"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+
+
+<nav class="navbar navbar-expand-Lg navbar-dark bg-custom">
+    <a class="navbar-brand" href="#"><i class="fas fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
-   
-</nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="index.jsp">Home
+                    <span class="sr-only">(current)</span>
+            </a></li>
+            <li class="nav-item active"><a class="nav-link"
+            href="all_recent_book.jsp"><i class="fas fa-book-open"></i>
+                Recent Book></a></li>
+            <li class="nav-item active"><a class="nav-link"
+                href="all_new_book.jsp"><i class="fas fa-book-open"></i>New
+            Book</a></li>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+            <li class="nav-item active"><a class="nav-link disabled"
+                href="all_old_book.jsp"><i class="fas fa-book-open"></i>Old
+            Book</a></li>
+        </ul>
+        <form class="form-inline my-2 my-Lg-0">
+            <a href="setting.jsp"class="btn btn-Light my-2 my-sm-0 mL-1" type="submit">
+                <i class="fas fa-cog"></i>Settting
+            </a>
+            <button class="btn btn-Light my-2 my-sm-0 mL-1" type="submit">
+                <i class="fas fa-phone-square-alt"></i>Contact Us
+            </button>
+        </form>
+    </div>
+</nav>
