@@ -67,6 +67,7 @@
             <li class="nav-item active"><a class="nav-link"
             href="all_recent_book.jsp"><i class="fas fa-book-open"></i>
                 Recent Book></a></li>
+
             <li class="nav-item active"><a class="nav-link"
                 href="all_new_book.jsp"><i class="fas fa-book-open"></i>New
             Book</a></li>
@@ -75,6 +76,7 @@
                 href="all_old_book.jsp"><i class="fas fa-book-open"></i>Old
             Book</a></li>
         </ul>
+        
         <form class="form-inline my-2 my-Lg-0">
             <a href="setting.jsp"class="btn btn-Light my-2 my-sm-0 mL-1" type="submit">
                 <i class="fas fa-cog"></i>Settting

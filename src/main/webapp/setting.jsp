@@ -22,7 +22,7 @@ a:hover {
     <h3 class="text-center">Hello, pabitra</h3>
     <div class="row p-5">
         <div class="col-md-6">
-            <a>
+            <a href="sell_book.jsp">
                 <div class="card">
                     <div class="card-body text-center">
                        <div class="text-primary">
@@ -50,7 +50,7 @@ a:hover {
     </div>
 
     <div class="col-md-4 mt-3">
-        <a>
+        <a href="user_address.jsp">
             <div class="card">
                 <div class="card-body text-center">
                    <div class="text-warning">
@@ -64,7 +64,7 @@ a:hover {
     </div>
 
     <div class="col-md-4 mt-3">
-        <a>
+        <a href="order.jsp">
             <div class="card">
                 <div class="card-body text-center">
                    <div class="text-danger">
@@ -78,7 +78,7 @@ a:hover {
     </div>
 
     <div class="col-md-4 mt-3">
-        <a>
+        <a href="helpline.jsp">
             <div class="card">
                 <div class="card-body text-center">
                    <div class="text-primary">
@@ -89,6 +89,8 @@ a:hover {
                 </div>
             </div>
         </a>
+    </div>
+</div>
 </div>
 
 <%@include file="all_component/footer.jsp"%>

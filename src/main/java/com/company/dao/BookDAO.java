@@ -15,3 +15,4 @@ public interface BookDAO {
 
 	public boolean deleteBook(int id);
 }
+
